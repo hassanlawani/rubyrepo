@@ -1,3 +1,15 @@
+require 'pg'
+name="gass"
+begin
+	# Initialize connection variables.
+	host = String('localhost')
+	database = String('crypto')
+    user = String('postgres')
+	password = String('SRT1989goods!')
+
+	# Initialize connection object.
+    connection = PG::Connection.new(:host => host, :user => user, :database => dbname, :port => '5432', :password => password)
+    puts 'Successfully created connection to database.'
 sql = "SELECT * FROM table ORDER BY date DESC LIMIT 15;"
 
   # Execute the query
