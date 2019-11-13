@@ -7,11 +7,12 @@ class Reddit
     @subreddits = {
       '/r/programming' => 'http://www.reddit.com/r/bittrex.json',
       '/r/webdev' => 'http://www.reddit.com/r/cryptocurrency.json',
-      
+
     }
 
     # the limit per subreddit to grab
     @maxcount = 5
+
   end
 
   def getTopPostsPerSubreddit()
@@ -27,6 +28,7 @@ class Reddit
 
         for i in 0..@maxcount
           title = response['data']['children'][i]['data']['title']
+          puts title
           trimmed_title = title[0..85].gsub(/\s\w+$/, '...')
 
           items.push({
@@ -46,7 +48,9 @@ end
 
 @Reddit = Reddit.new();
 
-SCHEDULER.every '10m', :first_in => 0 do |job|
+SCHEDULER.every '15s', :first_in => 0 do |job|
   posts = @Reddit.getTopPostsPerSubreddit
+
+  puts posts
   send_event('reddit', { :posts => posts })
 end

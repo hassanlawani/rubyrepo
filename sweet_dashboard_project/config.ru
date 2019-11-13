@@ -1,4 +1,6 @@
 require 'dashing'
+require 'pg'
+
 
 configure do
   set :auth_token, 'YOUR_AUTH_TOKEN'

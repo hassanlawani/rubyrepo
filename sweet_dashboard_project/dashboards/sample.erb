@@ -4,13 +4,17 @@
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
       <div data-id="welcome" data-view="Text" data-title="Hello" data-text="Welcome Hassan, This is your dashboard" data-moreinfo="Protip: You can drag the widgets around!"></div>
     </li>
-   
+
  <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
   <div data-id="linechart" data-view ="LineChart" data-title="BILIG vs BUS" data-moreinfo=""></div>
 </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="synergy" data-view="Meter" data-title="Synergy" data-height="200" data-width="200" data-min="0" data-max="100" data-suffix="%"></div>
+      <div data-id="bittrexprice" data-view="Meter" data-title="Bittrex Last Price" data-height="200" data-width="200" data-prefix="$"></div>
+    </li>
+
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+    <div data-id="bittrexprice" data-view="Btcprice" data-title="Bittrex Last Price" data-btcprice="" data-prefix="$"></div>
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="2">
@@ -28,14 +32,25 @@
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
   <div data-view="Countdown" data-title="Next Halvening" data-end="14-May-2020 18:59:28"></div>
 </li>
- 
+
  <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
- 		<div data-id="btcprice" data-view="Btcprice" data-btcprice="" data-prefix="$"></div>
+ <div data-id="btcprice" data-view="Btcprice" data-btcprice="" data-prefix="$"></div>
+ </li>
+
+ <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+     <div data-id="twitter_mentions" data-view="Comments" style="background-color:#00afd7;" data-moreinfo="Tweets @hassanlawani" ></div>
+     <i class="icon-twitter icon-background"></i>
  </li>
 
 <li data-row="1" data-col="1" data-sizex="4" data-sizey="1">
   <div data-id="reddit" data-view="Reddit"></div>
 </li>
+
+ <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="hash_price" data-view="List" data-unordered="true" data-title="hashed price" data-moreinfo=""></div>
+</li>
+
+
 
   </ul>
   <center><div style="font-size: 12px">Try this: curl -d '{ "auth_token": "YOUR_AUTH_TOKEN", "text": "Hey, Look what I can do!" }' \http://<%=request.host%>:<%=request.port%>/widgets/welcome</div></center>

@@ -1,6 +1,5 @@
 require 'twitter'
 
-
 #### Get your twitter keys & secrets:
 #### https://dev.twitter.com/docs/auth/tokens-devtwittercom
 twitter = Twitter::REST::Client.new do |config|
@@ -10,16 +9,17 @@ twitter = Twitter::REST::Client.new do |config|
   config.access_token_secret = 'JeaQZeVxwT23uKbDnD47HUIh2AWnoIOUPJiYIb3srDlKp'
 end
 
-search_term = URI::encode('#todayilearned')
+search_term = URI::encode('#bittrexexchange')
 
-SCHEDULER.every '5m', :first_in => 0 do |job|
+SCHEDULER.every '15s', :first_in => 0 do |job|
   begin
-    tweets = twitter.search("bittrex")
+    tweets = twitter.search("bittrexexchange")
 
     if tweets
       tweets = tweets.map do |tweet|
         { name: tweet.user.name, body: tweet.text, avatar: tweet.user.profile_image_url_https }
       end
+      puts tweets
       send_event('twitter_mentions', comments: tweets)
     end
   rescue Twitter::Error
