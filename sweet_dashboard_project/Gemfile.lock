@@ -1,8 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.7.0)
-      public_suffix (>= 2.0.2, < 5.0)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     backports (3.15.0)
     buftok (0.2.0)
     coffee-script (2.2.0)
@@ -25,6 +25,7 @@ GEM
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     equalizer (0.0.11)
+    eventmachine (1.2.7)
     eventmachine (1.2.7-x64-mingw32)
     eventmachine (1.2.7-x86-mingw32)
     execjs (2.0.2)
@@ -43,9 +44,10 @@ GEM
     multi_json (1.14.1)
     multipart-post (2.1.1)
     naught (1.1.0)
+    pg (1.1.4)
     pg (1.1.4-x64-mingw32)
     pg (1.1.4-x86-mingw32)
-    public_suffix (4.0.1)
+    public_suffix (4.0.7)
     rack (1.5.5)
     rack-protection (1.5.5)
       rack
@@ -98,6 +100,7 @@ GEM
 PLATFORMS
   x64-mingw32
   x86-mingw32
+  x86_64-linux
 
 DEPENDENCIES
   dashing
